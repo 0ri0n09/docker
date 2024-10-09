@@ -23,12 +23,13 @@ services:
     depends_on:
       - db
 
-  frontend:
+  front:
     build:
       context: ./front
     ports:
       - "3000:3000"
     environment:
+      NODE_ENV: production
       API_URL: http://backend:3333
     networks:
       - app-network
